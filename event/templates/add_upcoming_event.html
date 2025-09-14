@@ -1,0 +1,36 @@
+{% include 'admin_header.html' %}
+{% include 'admin_navigation.html' %}
+
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4 text-center">Add Upcoming Event</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="event_name" class="form-label">Event Name</label>
+            <input type="text" class="form-control" id="event_name" name="event_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="event_date" class="form-label">Event Date</label>
+            <input type="date" class="form-control" id="event_date" name="event_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="event_time" class="form-label">Event Time</label>
+            <input type="time" class="form-control" id="event_time" name="event_time" required>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Event Image</label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% include 'footer.html' %}

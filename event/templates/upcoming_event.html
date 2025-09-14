@@ -1,0 +1,33 @@
+
+<div class="container mt-5 mb-5">
+	<h2 class="mb-4 text-center">Upcoming Events</h2>
+	<div class="row">
+		{% for event in events %}
+		<div class="col-md-4 mb-4">
+			<div class="card h-100">
+				{% if event.image %}
+				<img src="{{ event.image.url }}" class="card-img-top" alt="{{ event.event_name }}" style="height: 250px; object-fit: cover;">
+				{% else %}
+				<img src="/media/photo.jpg" class="card-img-top" alt="No Image" style="height: 250px; object-fit: cover;">
+				{% endif %}
+				<div class="card-body">
+					<h5 class="card-title">{{ event.event_name }}</h5>
+					<p class="card-text">
+						<strong>Date:</strong> {{ event.event_date }}<br>
+						<strong>Time:</strong> {{ event.event_time }}<br>
+						<strong>Location:</strong> {{ event.location }}<br>
+						<strong>Description:</strong> {{ event.description }}
+					</p>
+				</div>
+			</div>
+		</div>
+		{% empty %}
+		<div class="col-12 text-center">
+			<p>No upcoming events found.</p>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+

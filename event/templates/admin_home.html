@@ -1,0 +1,14 @@
+{% include 'admin_header.html' %}
+{% include 'admin_navigation.html' %}
+
+<div class="container mt-5 mb-5">
+    <h2 class="mb-4 text-center">Admin Home</h2>
+    <div class="list-group">
+        <a href="{% url 'view_users' %}" class="list-group-item list-group-item-action">View Users</a>
+        <a href="{% url 'add_upcoming_event' %}" class="list-group-item list-group-item-action">Add Upcoming Event</a>
+    </div>
+</div>
+
+
+
+{% include 'footer.html' %}

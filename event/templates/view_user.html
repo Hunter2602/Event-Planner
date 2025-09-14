@@ -1,0 +1,45 @@
+{% include 'admin_header.html' %}
+{% include 'admin_navigation.html' %}
+{% load static %}
+
+<div class="container mt-5">
+    <h3 class="mb-4 text-center">Registered Users</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ user.user.username }}</td>
+                    <td>{{ user.user.email}}</td>
+                    <td>{{ user.mobile }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.dob }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{user.event_name}}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center">No users found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}
+
+
